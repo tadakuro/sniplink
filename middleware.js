@@ -1,10 +1,9 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
-// Public routes: the short link redirect and sign-in/up pages
 const isPublicRoute = createRouteMatcher([
   "/sign-in(.*)",
   "/sign-up(.*)",
-  "/r/(.*)",       // redirect route
+  "/r/(.*)",
 ]);
 
 export default clerkMiddleware(async (auth, req) => {
