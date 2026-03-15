@@ -281,20 +281,20 @@ export default function Home() {
                 <label style={{ display:"block", fontSize:12, color:"#55556a", marginBottom:8 }}>
                   CUSTOM ALIAS <span style={{ color:"#33334a" }}>— optional</span>
                 </label>
-                <div style={{ display:"flex" }}>
-                  <div style={{ background:"#0d0d18", border:"1.5px solid #2a2a40", borderRight:"none",
-                    borderRadius:"10px 0 0 10px", padding:"14px", fontSize:13, color:"#33334a",
-                    whiteSpace:"nowrap", display:"flex", alignItems:"center" }}>
-                    {baseDisplay}/r/
-                  </div>
-                  <input className="snip-input"
-                    style={{ borderRadius:"0 10px 10px 0", borderLeft:"none" }}
-                    placeholder="my-link"
-                    value={alias}
-                    onChange={e => { setAlias(e.target.value); setError(""); }}
-                    onKeyDown={e => e.key==="Enter" && handleShorten()}
-                  />
-                </div>
+                <div style={{ display:"flex", background:"#13131f", border:"1.5px solid #2a2a40", borderRadius:"10px", overflow:"hidden" }}>
+  <div style={{ background:"#0d0d18", padding:"14px", fontSize:13, color:"#55556a",
+    whiteSpace:"nowrap", display:"flex", alignItems:"center", flexShrink:0,
+    borderRight:"1.5px solid #2a2a40" }}>
+    {baseDisplay}/r/
+  </div>
+  <input className="snip-input"
+    style={{ border:"none", borderRadius:0, background:"transparent" }}
+    placeholder="my-link"
+    value={alias}
+    onChange={e => { setAlias(e.target.value); setError(""); }}
+    onKeyDown={e => e.key==="Enter" && handleShorten()}
+  />
+</div>
               </div>
 
               {error && (
